@@ -1,10 +1,13 @@
 const express = require('express');
-const app = express();
 const serverless = require('serverless-http');
 
-app.get('/', (req, res) => {
-  res.send('¡Hola desde Vercel sin Docker!');
+const app = express();
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.send('¡Hola desde Vercel sin Docker y funcionando!');
 });
 
-module.exports = app;
+app.use('/api', router);
+
 module.exports.handler = serverless(app);
