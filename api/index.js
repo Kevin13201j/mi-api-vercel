@@ -8,6 +8,8 @@ router.get('/', (req, res) => {
   res.send('¡Hola desde Vercel sin Docker y funcionando!');
 });
 
-app.use('/api', router);
+app.use('/', router);
 
+// exporta como función serverless
+module.exports = app;
 module.exports.handler = serverless(app);
