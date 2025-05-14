@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('¡Hola desde Vercel sin Docker y funcionando!');
+  res.send('¡Hola desde Vercel funciona perfectamente!');
 });
 
 app.use('/', router);
